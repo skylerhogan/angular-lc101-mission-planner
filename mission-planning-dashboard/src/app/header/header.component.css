@@ -1,0 +1,9 @@
+h1 {
+    display: flex;
+    padding: 10px;
+    border: rgb(35, 102, 190);
+    border-style: outset;
+    background: rgb(35, 102, 190);
+    color: whitesmoke;
+    opacity: 90%;
+}
