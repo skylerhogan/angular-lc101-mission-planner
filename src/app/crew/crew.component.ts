@@ -9,6 +9,8 @@ export class CrewComponent implements OnInit {
 
   inCrew: boolean = false;
   crew: object[] = [];
+  maxCrew: number = 2;
+  message: string = "Crew"
 
   candidates: object[] = [
     {name: "Sally Ride", photo: 'https://handlers.education.launchcode.org/static/images/sally-ride.jpg'},
@@ -26,4 +28,14 @@ export class CrewComponent implements OnInit {
 
   // Code the 'addCrewMember' function here:
 
+  addCrewMember(member) {
+    if(this.crew.includes(member)) {
+      this.crew.splice(this.crew.indexOf(member), 1);
+    } else if (this.crew.length === this.maxCrew) {
+      window.alert("Crew is full!")
+      this.message = "Crew Full"
+    } else if (this.crew.length < 3) {
+      this.crew.push(member);
+    }
+  }
 }
